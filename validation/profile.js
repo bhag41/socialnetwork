@@ -28,20 +28,20 @@ module.exports = function validateProfileInput(data) {
 
   //social
   if (!validator.isEmpty(data.twitter)) {
-    if (!validator.isURL(data.twitter) {
+    if (!validator.isURL(data.twitter)) {
       errors.twitter = "Enter valid Twitter handle";
     }
- }
+  }
   if (!validator.isEmpty(data.facebook)) {
     if (!validator.isURL(data.facebook)) {
       errors.facebook = "Enter valid Facebook URL";
     }
   }
   if (!validator.isEmpty(data.instagram)) {
-    if (!validator.isURL(data.instagram) {
+    if (!validator.isURL(data.instagram)) {
       errors.instagram = "Enter valid Instagram profile";
     }
- }
+  }
   if (!validator.isEmpty(data.youtube)) {
     if (!validator.isURL(data.youtube)) {
       errors.youtube = "Enter valid Youtube Channel";
@@ -52,7 +52,6 @@ module.exports = function validateProfileInput(data) {
       errors.linkedin = "Enter valid LinkedIn URL";
     }
   }
-
 
   return {
     errors,
