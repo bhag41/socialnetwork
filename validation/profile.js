@@ -20,34 +20,34 @@ module.exports = function validateProfileInput(data) {
   if (validator.isEmpty(data.skills)) {
     errors.skills = "Skills is required";
   }
-  if (!validator.isEmpty(data.website)) {
+  if (!isEmpty(data.website)) {
     if (!validator.isURL(data.website)) {
       errors.website = "Enter valid URL";
     }
   }
 
   //social
-  if (!validator.isEmpty(data.twitter)) {
+  if (!isEmpty(data.twitter)) {
     if (!validator.isURL(data.twitter)) {
       errors.twitter = "Enter valid Twitter handle";
     }
   }
-  if (!validator.isEmpty(data.facebook)) {
+  if (!isEmpty(data.facebook)) {
     if (!validator.isURL(data.facebook)) {
       errors.facebook = "Enter valid Facebook URL";
     }
   }
-  if (!validator.isEmpty(data.instagram)) {
+  if (!isEmpty(data.instagram)) {
     if (!validator.isURL(data.instagram)) {
       errors.instagram = "Enter valid Instagram profile";
     }
   }
-  if (!validator.isEmpty(data.youtube)) {
+  if (!isEmpty(data.youtube)) {
     if (!validator.isURL(data.youtube)) {
       errors.youtube = "Enter valid Youtube Channel";
     }
   }
-  if (!validator.isEmpty(data.linkedin)) {
+  if (!isEmpty(data.linkedin)) {
     if (!validator.isURL(data.linkedin)) {
       errors.linkedin = "Enter valid LinkedIn URL";
     }
