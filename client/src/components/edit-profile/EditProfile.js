@@ -9,7 +9,7 @@ import SelectListGroup from "../common/SelectListGroup";
 import { createProfile, getCurrentProfile } from "../../actions/profileActions";
 import isEmpty from "../../validation/is-empty";
 
-class EditProfile extends Component {
+class CreateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -108,6 +108,7 @@ class EditProfile extends Component {
       instagram: this.state.instagram
     };
     this.props.createProfile(profileData, this.props.history);
+    //we are still using createprofile route because on the backend we use createprofile for both creating and editing the profile.
   }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -235,8 +236,8 @@ class EditProfile extends Component {
                   placeholder="Github Username"
                   name="githubusername"
                   value={this.state.githubusername}
-                  onChange={this.onChange}
-                  error={errors.githubusername}
+                  onChange={this.onChange} 
+
                   info="If you want your latest repos and Github link, include your username"
                 />
                 <TextAreaFieldGroup
@@ -276,7 +277,7 @@ class EditProfile extends Component {
   }
 }
 
-EditProfile.propTypes = {
+CreateProfile.propTypes = {
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
@@ -288,5 +289,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  withRouter(EditProfile)
+  withRouter(CreateProfile)
 );
